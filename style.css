@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================== FONTS ===================== */
+@font-face {
+    font-family: "Clash";
+    src: url(fonts/ClashDisplay-Bold.otf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Clash";
+    src: url(fonts/ClashDisplay-Medium.otf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Clash";
+    src: url(fonts/ClashDisplay-Regular.otf);
+    font-weight: 400;
+}
+
+/* ===================== BASE ===================== */
+h1,
+h2 {
+    font-family: "Clash", "Inter", sans-serif;
+}
+
+body {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: #000000;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===================== HEADER ===================== */
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 44px 4vw;
+    position: fixed;
+    z-index: 99;
+    mix-blend-mode: difference;
+
+    h1 {
+        font-size: 24px;
+        font-weight: 400;
+    }
+}
+
+/* ===================== HERO ===================== */
+.transicao {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .subtitulo {
+        position: relative;
+        width: 350px;
+        height: 56px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 32px;
+        z-index: 1;
+        margin-bottom: 72px;
+
+        video {
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 400;
+            mix-blend-mode: color-dodge;
+            color: rgb(238, 238, 238);
+        }
+    }
+
+    .conteudo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 13vw;
+
+        h2 {
+            font-size: 3.5vw;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        p {
+            text-align: center;
+            width: 58%;
+            font-size: clamp(16px, 1.1vw, 1.1vw);
+            line-height: clamp(24px, 1.8vw, 1.8vw);
+            margin: 24px 0;
+        }
+
+        @media (max-width: 800px) {
+            h2 {
+                font-size: 5vw;
+            }
+
+            p {
+                font-size: 2vw;
+            }
+        }
+    }
+
+    @media (max-width: 800px) {
+        .conteudo {
+            padding: 0 2vw;
+        }
+
+        .subtitulo {
+            width: 250px;
+            height: 40px;
+            margin-bottom: 20px;
+
+            h3 {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+/* ===================== BACKGROUNDS ===================== */
+.bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    img,
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.bgv {
+    position: absolute;
+    z-index: -1;
+}
+
+.subtitulo::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #000000;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* ===================== BOTÕES ===================== */
+.botoes {
+    display: flex;
+    gap: 90px;
+}
+
+.botoes a {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 20px;
+    min-width: 180px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 8px;
+}
+
+@media (max-width: 800px) {
+    .botoes {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .botoes a {
+        font-size: 12px;
+    }
+}
+
+.botaoPrimario {
+    background-color: #ffffff;
+    color: #000000;
+    opacity: 0.8;
+}
+
+.botaoSecundario,
+.botaoTerciario {
+    background-color: #000000;
+    color: #ffffff;
+    opacity: 0.8;
+    border: 0.5px solid rgba(255, 255, 255, 0.377);
+}
+
+.botaoTerciario {
+    background-color: #E7EAF1;
+    color: #000000;
+    font-weight: 600;
+    border: 0.5px solid rgba(94, 94, 94, 0.377);
+}
+
+.botaoPrimario:hover,
+.botaoSecundario:hover,
+.botaoTerciario:hover {
+    opacity: 1;
+}
+
+/* ===================== SEÇÃO 2 ===================== */
+.secao2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    h2 {
+        z-index: 2;
+        font-size: 5vw;
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.75);
+    }
+}
+
+/* ===================== RETÂNGULOS ===================== */
+.retangulos {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    pointer-events: none;
+
+    div {
+        background-color: black;
+        width: 100%;
+        transform: translateY(-100%);
+        border: 1px black solid;
+        z-index: 2;
+    }
+}
+
+/* ===================== SEÇÃO 4 ===================== */
+.secao4 {
+    background-color: #E7EAF1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    gap: 0 25px;
+    padding: 50px 200px;
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    .secao4-div {
+        width: 200px;
+        height: 350px;
+        border-radius: 16px;
+        padding: 15px;
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin: 50px 0;
+    }
+
+    img {
+        width: 50px;
+        height: 75px;
+        border-radius: 8px;
+    }
+
+    img::after {
+        content: "";
+    }
+
+    p,
+    h3 {
+        color: #000000;
+    }
+}
+
+/* ===================== FOOTER / 3D ===================== */
+.animacao-footer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.secao3D {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .diamante {
+        width: 100%;
+        z-index: 1;
+    }
+
+    h2 {
+        font-size: 9vw;
+        position: absolute;
+        font-weight: 500;
+    }
+}
+
+footer {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 4vw;
+    padding-bottom: 25px;
+
+    .esquerda {
+        h2 {
+            font-size: 5vw;
+            font-weight: 400;
+        }
+
+        div {
+            display: flex;
+            gap: 32px;
+        }
+    }
+
+    .direita {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        h3 {
+            font-size: 3vw;
+            text-align: end;
+        }
+
+        p {
+            margin: 32px 0;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    footer {
+        .esquerda {
+            div {
+                flex-direction: column;
+            }
+        }
+    }
+}
