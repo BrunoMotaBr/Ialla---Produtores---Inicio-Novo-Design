@@ -124,7 +124,7 @@ header {
             }
 
             p {
-                font-size: 2vw;
+                font-size: 7vw;
             }
         }
     }
@@ -169,6 +169,7 @@ header {
 .bgv {
     position: absolute;
     z-index: -1;
+    width: 100%;
 }
 
 .subtitulo::after {
