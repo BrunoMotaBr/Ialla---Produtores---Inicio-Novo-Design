@@ -124,7 +124,7 @@ header {
             }
 
             p {
-                font-size: 7vw;
+                font-size: 3.5vw;
             }
         }
     }
@@ -338,6 +338,7 @@ header {
 .secao3D {
     display: flex;
     height: 100%;
+    width: 100%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -403,6 +404,9 @@ footer {
         .esquerda {
             div {
                 flex-direction: column;
+            }
+            p{
+                font-size: 3.5vw;
             }
         }
     }
