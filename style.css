@@ -41,7 +41,7 @@ header {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 44px 4vw;
+    padding: 44px 2vw;
     position: fixed;
     z-index: 99;
     mix-blend-mode: difference;
