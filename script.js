@@ -115,7 +115,7 @@ window.addEventListener('load', () => {
         diamante.position.y = 1.5;
 
         if(window.innerWidth >= 545){
-            diamante.position.z = -20;
+            diamante.position.z = -60;
         }
 
         const linhaDoTempoDiamante = gsap.timeline({
